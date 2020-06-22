@@ -6,7 +6,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     // publicPath: '/dist/',
-    publicPath: process.env.NODE_ENV === 'production'? '/werewolf/dist/':'/dist/',
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/werewolf/'
+    : '/',
     filename: 'build.js'
   },
   module: {
@@ -85,6 +87,7 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map'
+  
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -107,3 +110,4 @@ if (process.env.NODE_ENV === 'production') {
     })
   ])
 }
+
